@@ -1,15 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-
 public class LevelManager : MonoBehaviour {
-	private float waitTime = 4.0f;
-	
-	void Update(){
-		if (Time.realtimeSinceStartup >= waitTime){
-			LoadLevel("01a Start Menu");
-		}		
+
+	public float waitTime;
+
+	void Start () {
+		Invoke ("LoadNextLevel", waitTime);
 	}
 
 	public void LoadLevel(string name){
@@ -21,5 +18,8 @@ public class LevelManager : MonoBehaviour {
 		Debug.Log ("Quit requested");
 		Application.Quit ();
 	}
-
+	
+	public void LoadNextLevel() {
+		Application.LoadLevel(Application.loadedLevel + 1);
+	}
 }
