@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour {
 	
 	void Update(){
 		if (Time.realtimeSinceStartup >= waitTime){
-			LoadLevel("Start Menu");
+			LoadLevel("01a Start Menu");
 		}		
 	}
 
