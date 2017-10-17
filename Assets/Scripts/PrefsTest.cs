@@ -20,7 +20,7 @@ public class PrefsTest : MonoBehaviour {
 		print ("is level 2 unlocked?");
 		Debug.Log (PlayerPrefsManager.IsLevelUnlocked(2));
 		
-		PlayerPrefsManager.SetDifficultyLevel(1.8f);
+		PlayerPrefsManager.SetDifficultyLevel(1);
 		print ("what is the difficulty level?");
 		Debug.Log(PlayerPrefsManager.GetDifficultyLevel());
 	}
