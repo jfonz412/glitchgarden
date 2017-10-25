@@ -6,7 +6,7 @@ public class LevelManager : MonoBehaviour {
 	public float waitTime;
 
 	void Start () {
-		if (waitTime == 0.0){
+		if (waitTime <= 0.0){
 			Debug.Log ("Level auto load disabled");
 		}else{
 			Invoke ("LoadNextLevel", waitTime);
