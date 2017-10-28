@@ -17,9 +17,8 @@ public class Defender : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D(Collider2D other){
-		Debug.Log (other.gameObject.tag);
 		if(other.gameObject.tag == "Attacker"){
-			Debug.Log ("Defender under attack!");
+			//Debug.Log ("Defender under attack!");
 		}
 	}
 }

@@ -2,22 +2,13 @@
 using System.Collections;
 
 public class Attacker : MonoBehaviour {
-	[Range(-1f, 1.5f)]
-	public float currentSpeed;
+ 	private GameObject currentTarget;
+	private float currentSpeed;
 	
 	// Use this for initialization
 	void Start () {
 		Rigidbody2D myRigidBody = gameObject.AddComponent<Rigidbody2D>();
 		myRigidBody.isKinematic = true;
-	}
-	
-	void OnTriggerEnter2D(Collider2D other){
-		Debug.Log (other.gameObject.tag);
-		if(other.gameObject.tag == "Defender"){
-			Debug.Log ("Attacking defender!");
-		}else if(other.gameObject.tag == "Projectile"){
-			Debug.Log ("Attacker hit by projectile!");
-		}
 	}
 	
 	// Update is called once per frame
@@ -27,6 +18,10 @@ public class Attacker : MonoBehaviour {
 	
 	public void SetSpeed(float speed){
 		currentSpeed = speed;
+	}
+	
+	public void Attack(GameObject obj){
+		currentTarget = obj;
 	}
 	
 	public void StrikeCurrentTarget(float damage){
