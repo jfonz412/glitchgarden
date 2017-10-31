@@ -2,7 +2,15 @@
 using System.Collections;
 
 public class Shooter : MonoBehaviour {
-	public GameObject projectile, projectileParent, gun;
+	public GameObject projectile, gun;
+	private GameObject projectileParent;
+	
+	void Start(){
+		projectileParent = GameObject.Find("Projectiles");
+		if(!projectileParent){
+			projectileParent = new GameObject("Projectiles");
+		}
+	}
 	
 	//animator can reach into private methods
 	private void Fire(){
