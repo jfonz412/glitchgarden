@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Button : MonoBehaviour {
-	private static GameObject selectedObject;
+	public static GameObject selectedObject;
 	
 	public GameObject defender;
 
